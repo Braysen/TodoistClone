@@ -220,8 +220,8 @@ header{
     height: calc(100vh);
     padding-top: 74px;
     position: fixed;
-    overlay-x: hidden;
-    overlay-y: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
     border-right: $generic-border;
     background-color: #fafafa;
 
@@ -249,93 +249,92 @@ header{
             svg{
                 color: #cacaca;
             }
+        }//Ag
 
-            &.active, &:hover{
-                font-weight: bold;
-                background-color: white;
-            }
+        &.active, &:hover{
+            font-weight: bold;
+            background-color: white;
+        }
 
-            &:nth-child(1){
+        &:nth-child(1){
 
-                .sidebar__dot{
-                    color: #6accbc;
-                }
-
-            }
-
-            &:nth-child(2){
-
-                .sidebar__dot{
-                    color: #fad003;
-                }
-
-            }
-
-            &:nth-child(3){
-
-                .sidebar__dot{
-                    color: #ff8d85;
-                }
-
-            }
-
-            &:nth-child(4){
-
-                .sidebar__dot{
-                    color: #ff9932;
-                }
-
-            }
-
-            &:nth-child(5){
-
-                .sidebar__dot{
-                    color: #af38eb;
-                }
-
+            .sidebar__dot{
+                color: #6accbc;
             }
 
         }
 
-        &__projects{
-            padding-left: 3px;
+        &:nth-child(2){
+
+            .sidebar__dot{
+                color: #fad003;
+            }
+
         }
 
-        &__project{
-            @include va('left');
+        &:nth-child(3){
+
+            .sidebar__dot{
+                color: #ff8d85;
+            }
+
         }
 
-        &__dot{
+        &:nth-child(4){
+
+            .sidebar__dot{
+                color: #ff9932;
+            }
+
+        }
+
+        &:nth-child(5){
+
+            .sidebar__dot{
+                color: #af38eb;
+            }
+
+        }
+
+    }
+
+    &__projects{
+        padding-left: 3px;
+    }
+
+    &__project{
+        @include va('left');
+    }
+
+    &__dot{
+        margin-right: 10px;
+        font-size: 30px;
+    }
+
+    &__middle{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        border-bottom: $generic-border;
+        padding-left: 10px;
+        cursor: pointer;
+
+        span{
+            color: #0000008a;
             margin-right: 10px;
-            font-size: 30px;
+
+            svg.hidden-projects{
+                transform: rotate(-90deg);
+            }
+
         }
 
-        &__middle{
-            margin-top: 20px;
-            margin-bottom: 20px;
-            display: flex;
-            border-bottom: $generic-border;
-            padding-left: 10px;
-            cursor: pointer;
-
-            span{
-                color: #0000008a;
-                margin-right: 10px;
-
-                svg.hidden-projects{
-                    transform: rotate(-90deg);
-                }
-
-            }
-
-            h2{
-                margin: 0;
-                color: #333;
-                font-size: 15px;
-                font-weight: bold;
-                padding-bottom: 20px;
-            }
-
+        h2{
+            margin: 0;
+            color: #333;
+            font-size: 15px;
+            font-weight: bold;
+            padding-bottom: 20px;
         }
 
     }
