@@ -1,6 +1,6 @@
 import React from 'react';
-import {FaPizzaSlice} from 'react-icons/fa';
-
+import {FaPizzaSlice} from 'react-icons/fa';//Verificado
+//Verificado
 export const Header = () => {
     //const x=1;
     return(
@@ -14,7 +14,7 @@ export const Header = () => {
                         <li data-testid="quick-add-task-action" className="settings__add">
                             +
                         </li>
-                        <li data-testid="dark-mode-action" className="ettings__dark-mode">
+                        <li data-testid="dark-mode-action" className="settings__dark-mode">
                             <FaPizzaSlice/>
                         </li>
                     </ul>

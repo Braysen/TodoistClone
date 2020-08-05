@@ -1,8 +1,9 @@
 import React from 'react';
-import {Header} from './components/layout/Header';
-import { Content } from './components/layout/Content';
-import {ProjectsProvider,SelectedProjectProvider} from './context';
+import {Header} from './components/layout/Header';//Verificado
+import { Content } from './components/layout/Content';//Verificado
+import {ProjectsProvider,SelectedProjectProvider} from './context';//Verificado
 
+//Verificado
 export const App = () => (
     <SelectedProjectProvider>
       <ProjectsProvider>

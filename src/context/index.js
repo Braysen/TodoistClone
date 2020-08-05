@@ -2,13 +2,13 @@ import{
     ProjectsContext,
     ProjectsProvider,
     useProjectsValue
-} from './projects-context';
+} from './projects-context';//Verificado
 
 import{
     SelectedProjectContext,
     SelectedProjectProvider,
     useSelectedProjectValue
-} from './selected-project-context';
+} from './selected-project-context';//Verificado
 
 export {
     ProjectsContext,
@@ -17,4 +17,4 @@ export {
     SelectedProjectContext,
     SelectedProjectProvider,
     useSelectedProjectValue
-};
+};//Verificado

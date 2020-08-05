@@ -1,6 +1,7 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import firebase from 'firebase/app';//Verificado
+import 'firebase/firestore';//Verificado
 
+/* Verificado */
 const firebaseConfig = firebase.initializeApp({
     apiKey: "",
     authDomain: "",

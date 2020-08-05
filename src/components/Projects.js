@@ -1,17 +1,19 @@
-import React, {useState} from 'react';
-import {useSelectedProjectValue, useProjectsValue} from '../context';
+import React, {useState} from 'react';//Verificado
+import {useSelectedProjectValue, useProjectsValue} from '../context';//Verificado
+import { IndividualProject } from './IndividualProject';
 
 export const Projects = ({activeValue = null}) => {
-    const [active,setActive] = useState(activeValue);
-    const {setSelectedProject} = useSelectedProjectValue();
-    const {projects} = useProjectsValue();
+    const [active,setActive] = useState(activeValue);//Verificado
+    const {setSelectedProject} = useSelectedProjectValue();//Verificado
+    const {projects} = useProjectsValue();//Verificado
 
-    console.log(projects);
+    console.log('projects', projects.length);
 
     return(
         projects &&
         projects.map(project => (
-            <li key={project.projectid} 
+            <li 
+                key={project.projectid} 
                 data-doc-id={project.docid}
                 data-testid="project-action"
                 className={
@@ -21,14 +23,14 @@ export const Projects = ({activeValue = null}) => {
                 }
                 onKeyDown={() => {
                     setActive(project.projectid);
-                    setSelectedProject(project.projectid)
+                    setSelectedProject(project.projectid);
                 }}
                 onClick={() => {
                     setActive(project.projectid);
                     setSelectedProject(project.projectid);
                 }}
                 >
-                    {('Project',JSON.stringify(project))}
+                    <IndividualProject project={project}/>
             </li>
         ))
     );
