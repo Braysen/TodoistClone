@@ -4,6 +4,7 @@ import { useTasks } from '../hooks';//Verificado*
 import { collatedTasks } from '../constants';//Verificado
 import { getTitle, getCollatedTitle, collatedTasksExist } from '../helpers';//Verificado
 import { useSelectedProjectValue, useProjectsValue } from '../context';//Verificado
+import { AddTask } from './AddTask';
 
 export const Tasks = () => {
     const { selectedProject } = useSelectedProjectValue();//Verificado
@@ -41,6 +42,7 @@ export const Tasks = () => {
                     </li>
                 ))}
             </ul>
+            <AddTask/>
         </div>
     );
 };
