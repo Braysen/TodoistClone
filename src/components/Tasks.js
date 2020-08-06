@@ -15,12 +15,10 @@ export const Tasks = () => {
     
     if(projects && selectedProject && !collatedTasksExist(selectedProject)){//Verificado
         projectName = getTitle(projects, selectedProject).name;//Verificado
-        console.log('projectName 1', projectName);//Verificado
     }
 
     if(collatedTasksExist(selectedProject) && selectedProject){//Verificado
         projectName = getCollatedTitle(collatedTasks, selectedProject).name;//Verificado
-        console.log('projectName 2', projectName);//Verificado
     }
     
     //Verificado
