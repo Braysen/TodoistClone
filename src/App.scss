@@ -5,11 +5,11 @@
 
 html{
     box-sizing: border-box;
-}
+}//Verificado
 
 *, *:before, *:after{
     box-sizing: inherit;
-}
+}//Verificado
 
 body{
     margin: 0;
@@ -21,12 +21,12 @@ body{
     font-smooth: always;
     -webkit-font-smoothing: antialised;
     -moz-osx-font-smoothing: grayscale;
-}
+}//Verificado
 
 ul{
     margin: 0;
     padding: 0;
-}
+}//Verificado
 
 //variables
 $generic-box-shadow: rgba(0,0,0,0.1) 0px 0px 0px 1px, rgba(0,0,0,0.1) 0px 4px 11px;
@@ -42,7 +42,7 @@ $generic-bg: #db4c3f;
     z-index: 1;
     top: 85px;
     border-radius: 3px;
-}
+}//Verificado
 
 @mixin va($va-align: center){
     display: flex;
@@ -54,7 +54,7 @@ $generic-bg: #db4c3f;
         justify-content: center;
     }
 
-}
+}//Validado
 
 @mixin no-select {
     -webkit-touch-callout: none;
@@ -63,7 +63,7 @@ $generic-bg: #db4c3f;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
+}//Validado
 
 @mixin btn($width){
     width: $width;
@@ -90,7 +90,12 @@ $generic-bg: #db4c3f;
     cursor: pointer;
     font-size: 14px;
     margin: 2px 5px;
-}
+}//Validado
+
+@mixin transparent-button(){
+    background-color: transparent;
+    border: 0;
+}//Validado
 
 @mixin task-item{
     list-style-type: none;
@@ -108,7 +113,7 @@ $generic-bg: #db4c3f;
     &:hover{
         background-color: #f9f9f9;
     }
-}
+}//Validado
 
 @mixin mq($from){
     @media (max-width: $from){
@@ -125,7 +130,7 @@ $generic-bg: #db4c3f;
         background-color: #282828;
         border-color: transparent;
     }
-}
+}//Validado
 
 //header
 header{
@@ -141,7 +146,7 @@ header{
 
     @include mq('900px'){
         padding: 0 10px;
-    }
+    }//Verificado
 
     nav{
         display: grid;
@@ -156,7 +161,7 @@ header{
 
         p,li{
             color: white;
-        }
+        }//Verificado
 
         div{
             &.logo{
@@ -165,9 +170,9 @@ header{
 
                 img{
                     width: 24px;
-                }
+                }//Verificado
 
-            }
+            }//Verificado
 
             &.settings{
                 grid-area: 1/2;
@@ -190,27 +195,45 @@ header{
                         &:hover{
                             border-radius: 3px;
                             background-color: rgba(255,255,255,0.2);
-                        }
+                        }//Verificado
 
                         &.settings__add{
                             margin-right: 15px;
                             font-size: 30px;
-                        }
 
-                        &.settings__dark-mode svg{
-                            width: 20px;
-                            height: 20px;
+                            button{
+                                @include transparent-button();
+                                color: white;
+                                cursor: pointer;
+                            }
                         }//Verificado
 
-                    }
+                        &.settings__dark-mode{
 
-                }
+                            button{
+                                @include transparent-button();
+                                color: white;
+                                cursor: pointer;
+                                display: flex;
+
+                                svg{
+                                    width: 20px;
+                                    height: 20px;
+                                }
+
+                            }//Verificado
+
+                        }//Verificado
+
+                    }//Verificado
+
+                }//Verificado
 
             }
 
         }
 
-    }
+    }//Verificado
 }//Verificado
 
 //Sidebar
@@ -234,13 +257,19 @@ header{
         padding-right: 15px;
 
         &:hover .sidebar__project-delete{
-            display: block;
-        }
-    }
+            display: flex;
+        }//Validado
+    }//Validado
 
     &__project{
         padding: 5px 0;
         cursor: pointer;
+
+        div:nth-child(1){
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }//Validado
 
         &-delete{
             margin-left: auto;
@@ -342,21 +371,32 @@ header{
     &__generic{
 
         li{
-            padding: 10px 0 10px 10px;
+            /*padding: 10px 0 10px 10px;*/
             list-style-type: none;
             color: #333;
             display: flex;
             cursor: pointer;
             line-height: 1.50;
             font-size: 15px;
+            padding-left: 0;
+            padding-right: 0;
 
-            span:first-of-type{
-                margin-right: 10px;
+            div:nth-child(1){
+                display: flex;
+                padding: 10px 0 10px 10px;
+                width: 100%;
 
-                svg{
-                    width: 18px;
-                    height: 18px;
-                    color: #555;
+                span:first-of-type{
+                    margin-right: 10px;
+                    display: flex;
+                    align-items: center;
+    
+                    svg{
+                        width: 18px;
+                        height: 18px;
+                        color: #555;
+                    }
+    
                 }
 
             }

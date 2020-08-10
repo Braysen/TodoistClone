@@ -13,7 +13,7 @@ export const Tasks = () => {
 
     let projectName = '';//Verificado
     
-    if(projects && selectedProject && !collatedTasksExist(selectedProject)){//Verificado
+    if(projects.length > 0 && selectedProject && !collatedTasksExist(selectedProject)){//Verificado
         projectName = getTitle(projects, selectedProject).name;//Verificado
     }
 

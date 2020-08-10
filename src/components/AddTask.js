@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { FaRegListAlt, FaRegCalendarAlt } from 'react-icons/fa';
-import moment from 'moment';
-import { firebase } from '../firebase';
-import { useSelectedProjectValue } from '../context';
+import React, { useState } from 'react';//Validado
+import { FaRegListAlt, FaRegCalendarAlt } from 'react-icons/fa';//Validado
+import moment from 'moment';//Validado
+import { firebase } from '../firebase';//Validado
+import { useSelectedProjectValue } from '../context';//Validado
 import { ProjectOverlay } from './ProjectOverlay';//Validado
 import { TaskDate } from './TaskDate';//Validado
 
@@ -62,7 +62,11 @@ export const AddTask = ({
                      <div
                         className="add-task__shallow"
                         data-testid="show-main-action"
-                        onClick={() => setShowMain(!showMain)}>
+                        onClick={() => setShowMain(!showMain)}
+                        onKeyDown={() => setShowMain(!showMain)}
+                        tabIndex={0}
+                        role="button"
+                        >
                             <span className="add-task__plus">+</span>
                             <span className="add-task__text">Add Task</span>
                      </div>
@@ -82,6 +86,13 @@ export const AddTask = ({
                                             setShowProjectOverlay(false);//Verificado
                                             setShowQuickAddTask(false);//Verificado
                                         }}
+                                        onKeyDown={() => {
+                                            setShowMain(false);//Verificado
+                                            setShowProjectOverlay(false);//Verificado
+                                            setShowQuickAddTask(false);//Verificado
+                                        }}
+                                        tabIndex={0}
+                                        role="button"
                                     >
                                         X
                                     </span>
@@ -125,6 +136,12 @@ export const AddTask = ({
                                     setShowMain(false);
                                     setShowProjectOverlay(false);
                                 }}
+                                onKeyPress={() => {
+                                    setShowMain(false);
+                                    setShowProjectOverlay(false);
+                                }}
+                                tabIndex={0}
+                                role="button"
                              >
                                  Cancel
                              </span>
@@ -133,6 +150,9 @@ export const AddTask = ({
                             className="add-task__project"
                             data-testid="show-project-overlay"
                             onClick={() => setShowProjectOverlay(!showProjectOverlay)}
+                            onKeyDown={() => setShowProjectOverlay(!showProjectOverlay)}
+                            tabIndex={0}
+                            role="button"
                             >
                                 <FaRegListAlt/>
                          </span>
@@ -140,6 +160,9 @@ export const AddTask = ({
                             className="add-task__date"
                             data-testid="show-task-date-overlay"
                             onClick={() => setShowTaskDate(!showTaskDate)}
+                            onKeyDown={() => setShowTaskDate(!showTaskDate)}
+                            tabIndex={0}
+                            role="button"
                          >
                              <FaRegCalendarAlt/>
                          </span>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {firebase} from '../firebase';
+import {firebase} from '../firebase';//Verificado
 
 export const Checkbox = ({ id }) => {
     //Verificado
@@ -11,12 +11,18 @@ export const Checkbox = ({ id }) => {
           .update({
               archived: true,
           });
-    };
-    //Verificado
+    };//Verificado
+    
     return (
-        <div className="checkbox-holder" data-testid="checkbox-action"
-             onClick={() => archiveTask()}>
-                 <span className="checkbox"></span>
+        <div
+            className="checkbox-holder"
+            data-testid="checkbox-action"
+            onClick={() => archiveTask()}
+            onKeyDown={() => archiveTask()}
+            role="button"
+            tabIndex={0}
+        >
+            <span className="checkbox"></span>
         </div>
-    );
+    );//Verificado
 };

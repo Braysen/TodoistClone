@@ -8,7 +8,7 @@ export const AddProject = ({ shouldShow = false }) => {
     const [projectName, setProjectName] = useState('');//Validado
 
     const projectid = generatePushId();//Validado
-    const {setProjects} = useProjectsValue();//Validado
+    const {projects, setProjects} = useProjectsValue();//Validado
 
     const addProject = () =>
        projectName &&
@@ -21,10 +21,10 @@ export const AddProject = ({ shouldShow = false }) => {
              userid: '$2y$10$XvdCaH3OTo7okUibz2DDv.a.uDnT.MZ0zfEXP2mM4vlr8bP3qZdhG'
          })
          .then(() => {
-             setProjects([]);
+             setProjects([...projects]);
              setProjectName('');
              setShow(false);
-         });
+         });//Validado
 
          return(
              <div className="add-project" data-testid="add-project">
@@ -50,9 +50,12 @@ export const AddProject = ({ shouldShow = false }) => {
                             data-testid="hide-project-overlay"
                             className="add-project__cancel"
                             onClick={() => setShow(false)}
+                            onKeyDown={() => setShow(false)}
+                            role="button"
+                            tabIndex={0}
                          >
                              Cancel
-                         </span>
+                         </span>{/* Validado */}
                      </div>
                  )}
                      <span className="add-project__plus">+</span>
@@ -60,9 +63,12 @@ export const AddProject = ({ shouldShow = false }) => {
                         data-testid="add-project-action"
                         className="add-project__text"
                         onClick={() => setShow(!show)}
+                        onKeyDown={() => setShow(!show)}
+                        role="button"
+                        tabIndex={-1}
                      >
                          Add Project
-                     </span>
+                     </span>{/* Validado */}
              </div>
          )
 };
